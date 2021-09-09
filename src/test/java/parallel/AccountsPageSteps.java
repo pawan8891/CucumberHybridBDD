@@ -22,12 +22,12 @@ public class AccountsPageSteps {
 	public void user_has_already_logged_in_to_application(DataTable credTable) {
 
 		List<Map<String, String>> credList = credTable.asMaps();
-		String userName = credList.get(0).get("username");
+		String uName = credList.get(0).get("username");
 		String password = credList.get(0).get("password");
 
 		DriverFactory.getDriver()
 				.get("http://automationpractice.com/index.php?controller=authentication&back=my-account");
-		accountsPage = loginPage.doLogin(userName, password);
+		accountsPage = loginPage.doLogin(uName, password);
 
 	}
 
